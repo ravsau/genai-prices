@@ -1387,7 +1387,9 @@ providers: list[Provider] = [
             ),
             ModelInfo(
                 id='openai.gpt-oss-120b-1:0',
-                match=ClauseContains(contains='openai.gpt-oss-120b-1'),
+                match=ClauseOr(
+                    or_=[ClauseContains(contains='openai.gpt-oss-120b-1'), ClauseEquals(equals='openai.gpt-oss-120b')]
+                ),
                 name='gpt-oss-120b',
                 context_window=128000,
                 prices=ModelPrice(input_mtok=Decimal('0.15'), output_mtok=Decimal('0.6')),
@@ -5008,6 +5010,7 @@ providers: list[Provider] = [
                     or_=[
                         ClauseEquals(equals='openai/gpt-oss-120b'),
                         ClauseEquals(equals='openai/gpt-oss-safeguard-20b'),
+                        ClauseEquals(equals='openai.gpt-oss-safeguard-20b'),
                     ]
                 ),
                 description="GPT-OSS 120B is OpenAI's flagship open source model, built on a Mixture-of-Experts (MoE) architecture with\n120 billion parameters and 128 experts.\n",
@@ -15121,7 +15124,7 @@ providers: list[Provider] = [
             ),
             ModelInfo(
                 id='z-ai/glm-4.6v',
-                match=ClauseEquals(equals='z-ai/glm-4.6v'),
+                match=ClauseOr(or_=[ClauseEquals(equals='z-ai/glm-4.6v'), ClauseEquals(equals='glm-4.6v')]),
                 name='GLM 4.6V',
                 context_window=131072,
                 prices=ModelPrice(

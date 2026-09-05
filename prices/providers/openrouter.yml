@@ -5830,7 +5830,9 @@ models:
   - id: z-ai/glm-4.6v
     name: GLM 4.6V
     match:
-      equals: z-ai/glm-4.6v
+      or:
+        - equals: z-ai/glm-4.6v
+        - equals: glm-4.6v
     prices:
       input_mtok: 0.3
       cache_read_mtok: 0.05

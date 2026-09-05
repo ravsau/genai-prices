@@ -2194,7 +2194,14 @@ export const data: Provider[] = [
         id: 'openai.gpt-oss-120b-1:0',
         name: 'gpt-oss-120b',
         match: {
-          contains: 'openai.gpt-oss-120b-1',
+          or: [
+            {
+              contains: 'openai.gpt-oss-120b-1',
+            },
+            {
+              equals: 'openai.gpt-oss-120b',
+            },
+          ],
         },
         context_window: 128000,
         prices: {
@@ -8364,6 +8371,9 @@ export const data: Provider[] = [
             },
             {
               equals: 'openai/gpt-oss-safeguard-20b',
+            },
+            {
+              equals: 'openai.gpt-oss-safeguard-20b',
             },
           ],
         },
@@ -25749,7 +25759,14 @@ export const data: Provider[] = [
         id: 'z-ai/glm-4.6v',
         name: 'GLM 4.6V',
         match: {
-          equals: 'z-ai/glm-4.6v',
+          or: [
+            {
+              equals: 'z-ai/glm-4.6v',
+            },
+            {
+              equals: 'glm-4.6v',
+            },
+          ],
         },
         context_window: 131072,
         prices: {

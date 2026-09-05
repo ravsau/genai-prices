@@ -90309,6 +90309,8 @@
           },
           {
             "api_flavor": "anthropic",
+            "input_price": "0.0000108",
+            "output_price": "0.000027",
             "provider_id": "aws"
           },
           {
@@ -91225,6 +91227,8 @@
           },
           {
             "api_flavor": "default",
+            "input_price": "0.0000108",
+            "output_price": "0.0000336",
             "provider_id": "groq"
           },
           {
@@ -129362,6 +129366,8 @@
           },
           {
             "api_flavor": "chat",
+            "input_price": "0.0001295",
+            "output_price": "0.0000657",
             "provider_id": "openrouter"
           },
           {

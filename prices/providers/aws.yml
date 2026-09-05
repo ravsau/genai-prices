@@ -750,7 +750,9 @@ models:
   - id: openai.gpt-oss-120b-1:0
     name: gpt-oss-120b
     match:
-      contains: openai.gpt-oss-120b-1
+      or:
+        - contains: openai.gpt-oss-120b-1
+        - equals: openai.gpt-oss-120b
     context_window: 128000
     prices:
       input_mtok: 0.15
