@@ -297,11 +297,23 @@ models:
     match:
       equals: grok-4.20-multi-agent
     context_window: 1000000
-    prices_checked: 2026-06-09
+    prices_checked: 2026-09-05
     prices:
-      input_mtok: 2
-      cache_read_mtok: 0.2
-      output_mtok: 6
+      input_mtok:
+        base: 1.25
+        tiers:
+          - start: 199999
+            price: 2.5
+      cache_read_mtok:
+        base: 0.2
+        tiers:
+          - start: 199999
+            price: 0.4
+      output_mtok:
+        base: 2.5
+        tiers:
+          - start: 199999
+            price: 5
 
   - id: grok-4.3
     name: Grok 4.3

@@ -2913,7 +2913,8 @@ providers: list[Provider] = [
                 match=ClauseOr(or_=[ClauseEquals(equals='command-r'), ClauseEquals(equals='command-r-08-2024')]),
                 name='Command R',
                 description='Command-R is a 35B parameter model that performs conversational language tasks at a higher quality, more reliably, and with a longer context than previous models. It can be used for complex workflows like code generation, retrieval augmented generation (RAG), tool use, and agents.',
-                prices=ModelPrice(input_mtok=Decimal('0.15'), output_mtok=Decimal('0.6')),
+                price_comments='Plain `command-r` and `command-r-08-2024` are not listed on the public pricing page and inherit the command-r-03-2024 price.',
+                prices=ModelPrice(input_mtok=Decimal('0.5'), output_mtok=Decimal('1.5')),
             ),
             ModelInfo(
                 id='command-r-plus',
@@ -5004,12 +5005,7 @@ providers: list[Provider] = [
             ),
             ModelInfo(
                 id='openai/gpt-oss-120b',
-                match=ClauseOr(
-                    or_=[
-                        ClauseEquals(equals='openai/gpt-oss-120b'),
-                        ClauseEquals(equals='openai/gpt-oss-safeguard-20b'),
-                    ]
-                ),
+                match=ClauseEquals(equals='openai/gpt-oss-120b'),
                 description="GPT-OSS 120B is OpenAI's flagship open source model, built on a Mixture-of-Experts (MoE) architecture with\n120 billion parameters and 128 experts.\n",
                 context_window=131072,
                 prices=ModelPrice(
@@ -5024,6 +5020,13 @@ providers: list[Provider] = [
                 prices=ModelPrice(
                     input_mtok=Decimal('0.075'), cache_read_mtok=Decimal('0.0375'), output_mtok=Decimal('0.3')
                 ),
+            ),
+            ModelInfo(
+                id='openai/gpt-oss-safeguard-20b',
+                match=ClauseEquals(equals='openai/gpt-oss-safeguard-20b'),
+                name='GPT-OSS Safeguard 20B',
+                context_window=131072,
+                prices=ModelPrice(input_mtok=Decimal('0.075'), output_mtok=Decimal('0.3')),
             ),
             ModelInfo(
                 id='qwen/qwen3-32b',
@@ -16826,7 +16829,11 @@ providers: list[Provider] = [
                 name='Grok 4.20 Multi-Agent',
                 description="Grok 4.20 Multi-Agent is a variant of xAI's Grok 4.20 designed for collaborative, agent-based workflows. Multiple agents operate in parallel to conduct deep research, coordinate tool use, and synthesize information.",
                 context_window=1000000,
-                prices=ModelPrice(input_mtok=Decimal('2'), cache_read_mtok=Decimal('0.2'), output_mtok=Decimal('6')),
+                prices=ModelPrice(
+                    input_mtok=TieredPrices(base=Decimal('1.25'), tiers=[Tier(start=199999, price=Decimal('2.5'))]),
+                    cache_read_mtok=TieredPrices(base=Decimal('0.2'), tiers=[Tier(start=199999, price=Decimal('0.4'))]),
+                    output_mtok=TieredPrices(base=Decimal('2.5'), tiers=[Tier(start=199999, price=Decimal('5'))]),
+                ),
             ),
             ModelInfo(
                 id='grok-4.3',

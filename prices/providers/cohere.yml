@@ -131,10 +131,13 @@ models:
       or:
         - equals: command-r
         - equals: command-r-08-2024
-    prices_checked: 2025-07-04
+    prices_checked: 2026-09-05
+    price_comments: >-
+      Plain `command-r` and `command-r-08-2024` are not listed on the public pricing page
+      and inherit the command-r-03-2024 price.
     prices:
-      input_mtok: 0.15
-      output_mtok: 0.6
+      input_mtok: 0.5
+      output_mtok: 1.5
 
   - id: command-r-plus
     name: Command R+

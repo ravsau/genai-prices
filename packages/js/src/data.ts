@@ -4772,9 +4772,11 @@ export const data: Provider[] = [
             },
           ],
         },
+        price_comments:
+          'Plain `command-r` and `command-r-08-2024` are not listed on the public pricing page and inherit the command-r-03-2024 price.',
         prices: {
-          input_mtok: 0.15,
-          output_mtok: 0.6,
+          input_mtok: 0.5,
+          output_mtok: 1.5,
         },
       },
       {
@@ -8358,14 +8360,7 @@ export const data: Provider[] = [
         description:
           "GPT-OSS 120B is OpenAI's flagship open source model, built on a Mixture-of-Experts (MoE) architecture with\n120 billion parameters and 128 experts.\n",
         match: {
-          or: [
-            {
-              equals: 'openai/gpt-oss-120b',
-            },
-            {
-              equals: 'openai/gpt-oss-safeguard-20b',
-            },
-          ],
+          equals: 'openai/gpt-oss-120b',
         },
         context_window: 131072,
         prices: {
@@ -8385,6 +8380,18 @@ export const data: Provider[] = [
         prices: {
           input_mtok: 0.075,
           cache_read_mtok: 0.0375,
+          output_mtok: 0.3,
+        },
+      },
+      {
+        id: 'openai/gpt-oss-safeguard-20b',
+        name: 'GPT-OSS Safeguard 20B',
+        match: {
+          equals: 'openai/gpt-oss-safeguard-20b',
+        },
+        context_window: 131072,
+        prices: {
+          input_mtok: 0.075,
           output_mtok: 0.3,
         },
       },
@@ -28669,9 +28676,33 @@ export const data: Provider[] = [
         },
         context_window: 1000000,
         prices: {
-          input_mtok: 2,
-          cache_read_mtok: 0.2,
-          output_mtok: 6,
+          input_mtok: {
+            base: 1.25,
+            tiers: [
+              {
+                start: 199999,
+                price: 2.5,
+              },
+            ],
+          },
+          cache_read_mtok: {
+            base: 0.2,
+            tiers: [
+              {
+                start: 199999,
+                price: 0.4,
+              },
+            ],
+          },
+          output_mtok: {
+            base: 2.5,
+            tiers: [
+              {
+                start: 199999,
+                price: 5,
+              },
+            ],
+          },
         },
       },
       {

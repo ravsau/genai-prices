@@ -248,9 +248,7 @@ models:
       GPT-OSS 120B is OpenAI's flagship open source model, built on a Mixture-of-Experts (MoE) architecture with
       120 billion parameters and 128 experts.
     match:
-      or:
-        - equals: openai/gpt-oss-120b
-        - equals: openai/gpt-oss-safeguard-20b
+      equals: openai/gpt-oss-120b
     context_window: 131072
     prices_checked: 2025-08-06
     prices:
@@ -271,6 +269,16 @@ models:
       input_mtok: 0.075
       cache_read_mtok: 0.0375
       output_mtok: 0.30
+
+  - id: openai/gpt-oss-safeguard-20b
+    name: GPT-OSS Safeguard 20B
+    match:
+      equals: openai/gpt-oss-safeguard-20b
+    context_window: 131072
+    prices_checked: 2026-09-05
+    prices:
+      input_mtok: 0.075
+      output_mtok: 0.3
 
   - id: qwen/qwen3-32b
     name: Qwen3 32B 131k
