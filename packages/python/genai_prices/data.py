@@ -10225,6 +10225,105 @@ providers: list[Provider] = [
         ],
     ),
     Provider(
+        id='openai-codex',
+        name='OpenAI Codex (subscription)',
+        api_pattern='https://chatgpt\\.com/backend-api/codex',
+        pricing_urls=['https://developers.openai.com/codex/pricing'],
+        description='Codex usage under a ChatGPT subscription. Requests draw down a plan quota and carry no per-token charge, so every model here is free. Do not use this provider for API-key Codex usage, which is billed at OpenAI Platform rates under the `openai` provider.',
+        price_comments='Subscription quota, no per-token price (pydantic/genai-prices#554).',
+        provider_match=ClauseEquals(equals='openai-codex'),
+        extractors=[
+            UsageExtractor(
+                root='usage',
+                mappings=[
+                    UsageExtractorMapping(path='prompt_tokens', dest='input_tokens', required=True),
+                    UsageExtractorMapping(
+                        path=['prompt_tokens_details', 'cached_tokens'], dest='cache_read_tokens', required=False
+                    ),
+                    UsageExtractorMapping(
+                        path=['prompt_tokens_details', 'cache_write_tokens'], dest='cache_write_tokens', required=False
+                    ),
+                    UsageExtractorMapping(
+                        path=['prompt_tokens_details', 'audio_tokens'], dest='input_audio_tokens', required=False
+                    ),
+                    UsageExtractorMapping(
+                        path=['completion_tokens_details', 'audio_tokens'], dest='output_audio_tokens', required=False
+                    ),
+                    UsageExtractorMapping(
+                        path=['completion_tokens_details', 'reasoning_tokens'],
+                        dest='output_reasoning_tokens',
+                        required=False,
+                    ),
+                    UsageExtractorMapping(path='completion_tokens', dest='output_tokens', required=True),
+                ],
+                api_flavor='chat',
+                model_path='model',
+            ),
+            UsageExtractor(
+                root='usage',
+                mappings=[
+                    UsageExtractorMapping(path='input_tokens', dest='input_tokens', required=True),
+                    UsageExtractorMapping(
+                        path=['input_tokens_details', 'cached_tokens'], dest='cache_read_tokens', required=False
+                    ),
+                    UsageExtractorMapping(
+                        path=['input_tokens_details', 'cache_write_tokens'], dest='cache_write_tokens', required=False
+                    ),
+                    UsageExtractorMapping(
+                        path=['output_tokens_details', 'reasoning_tokens'],
+                        dest='output_reasoning_tokens',
+                        required=False,
+                    ),
+                    UsageExtractorMapping(path='output_tokens', dest='output_tokens', required=True),
+                ],
+                api_flavor='responses',
+                model_path='model',
+            ),
+        ],
+        models=[
+            ModelInfo(id='codex-mini', match=ClauseEquals(equals='codex-mini'), name='Codex Mini', prices=ModelPrice()),
+            ModelInfo(
+                id='gpt-5-codex', match=ClauseEquals(equals='gpt-5-codex'), name='GPT-5 Codex', prices=ModelPrice()
+            ),
+            ModelInfo(
+                id='gpt-5.1-codex',
+                match=ClauseEquals(equals='gpt-5.1-codex'),
+                name='GPT-5.1 Codex',
+                prices=ModelPrice(),
+            ),
+            ModelInfo(
+                id='gpt-5.1-codex-max',
+                match=ClauseEquals(equals='gpt-5.1-codex-max'),
+                name='GPT-5.1 Codex Max',
+                prices=ModelPrice(),
+            ),
+            ModelInfo(
+                id='gpt-5.1-codex-mini',
+                match=ClauseEquals(equals='gpt-5.1-codex-mini'),
+                name='GPT-5.1 Codex Mini',
+                prices=ModelPrice(),
+            ),
+            ModelInfo(
+                id='gpt-5.2-codex',
+                match=ClauseEquals(equals='gpt-5.2-codex'),
+                name='GPT-5.2 Codex',
+                prices=ModelPrice(),
+            ),
+            ModelInfo(
+                id='gpt-5.3-codex',
+                match=ClauseEquals(equals='gpt-5.3-codex'),
+                name='GPT-5.3 Codex',
+                prices=ModelPrice(),
+            ),
+            ModelInfo(
+                id='gpt-5.5-codex',
+                match=ClauseEquals(equals='gpt-5.5-codex'),
+                name='GPT-5.5 Codex',
+                prices=ModelPrice(),
+            ),
+        ],
+    ),
+    Provider(
         id='openrouter',
         name='OpenRouter',
         api_pattern='https://(api\\.)?openrouter\\.ai',

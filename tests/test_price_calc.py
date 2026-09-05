@@ -44,6 +44,20 @@ def test_sync_success_with_provider():
     assert price.auto_update_timestamp is None
 
 
+def test_openai_codex_subscription_no_per_token_price():
+    price = calc_price(
+        Usage(input_tokens=2_000_000, cache_read_tokens=1_000_000, output_tokens=1_000_000),
+        model_ref='gpt-5.3-codex',
+        provider_id='openai-codex',
+    )
+
+    assert price.model.id == 'gpt-5.3-codex'
+    assert price.input_price == Decimal(0)
+    assert price.output_price == Decimal(0)
+    assert price.total_price == Decimal(0)
+    assert price.provider.id == 'openai-codex'
+
+
 @pytest.mark.parametrize(
     ('model_ref', 'expected_total_price'),
     [

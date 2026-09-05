@@ -17456,6 +17456,160 @@ export const data: Provider[] = [
     ],
   },
   {
+    id: 'openai-codex',
+    name: 'OpenAI Codex (subscription)',
+    pricing_urls: ['https://developers.openai.com/codex/pricing'],
+    api_pattern: 'https://chatgpt\\.com/backend-api/codex',
+    description:
+      'Codex usage under a ChatGPT subscription. Requests draw down a plan quota and carry no per-token charge, so every model here is free. Do not use this provider for API-key Codex usage, which is billed at OpenAI Platform rates under the `openai` provider.',
+    price_comments: 'Subscription quota, no per-token price (pydantic/genai-prices#554).',
+    provider_match: {
+      equals: 'openai-codex',
+    },
+    extractors: [
+      {
+        api_flavor: 'chat',
+        root: 'usage',
+        model_path: 'model',
+        mappings: [
+          {
+            path: 'prompt_tokens',
+            dest: 'input_tokens',
+            required: true,
+          },
+          {
+            path: ['prompt_tokens_details', 'cached_tokens'],
+            dest: 'cache_read_tokens',
+            required: false,
+          },
+          {
+            path: ['prompt_tokens_details', 'cache_write_tokens'],
+            dest: 'cache_write_tokens',
+            required: false,
+          },
+          {
+            path: ['prompt_tokens_details', 'audio_tokens'],
+            dest: 'input_audio_tokens',
+            required: false,
+          },
+          {
+            path: ['completion_tokens_details', 'audio_tokens'],
+            dest: 'output_audio_tokens',
+            required: false,
+          },
+          {
+            path: ['completion_tokens_details', 'reasoning_tokens'],
+            dest: 'output_reasoning_tokens',
+            required: false,
+          },
+          {
+            path: 'completion_tokens',
+            dest: 'output_tokens',
+            required: true,
+          },
+        ],
+      },
+      {
+        api_flavor: 'responses',
+        root: 'usage',
+        model_path: 'model',
+        mappings: [
+          {
+            path: 'input_tokens',
+            dest: 'input_tokens',
+            required: true,
+          },
+          {
+            path: ['input_tokens_details', 'cached_tokens'],
+            dest: 'cache_read_tokens',
+            required: false,
+          },
+          {
+            path: ['input_tokens_details', 'cache_write_tokens'],
+            dest: 'cache_write_tokens',
+            required: false,
+          },
+          {
+            path: ['output_tokens_details', 'reasoning_tokens'],
+            dest: 'output_reasoning_tokens',
+            required: false,
+          },
+          {
+            path: 'output_tokens',
+            dest: 'output_tokens',
+            required: true,
+          },
+        ],
+      },
+    ],
+    models: [
+      {
+        id: 'codex-mini',
+        name: 'Codex Mini',
+        match: {
+          equals: 'codex-mini',
+        },
+        prices: {},
+      },
+      {
+        id: 'gpt-5-codex',
+        name: 'GPT-5 Codex',
+        match: {
+          equals: 'gpt-5-codex',
+        },
+        prices: {},
+      },
+      {
+        id: 'gpt-5.1-codex',
+        name: 'GPT-5.1 Codex',
+        match: {
+          equals: 'gpt-5.1-codex',
+        },
+        prices: {},
+      },
+      {
+        id: 'gpt-5.1-codex-max',
+        name: 'GPT-5.1 Codex Max',
+        match: {
+          equals: 'gpt-5.1-codex-max',
+        },
+        prices: {},
+      },
+      {
+        id: 'gpt-5.1-codex-mini',
+        name: 'GPT-5.1 Codex Mini',
+        match: {
+          equals: 'gpt-5.1-codex-mini',
+        },
+        prices: {},
+      },
+      {
+        id: 'gpt-5.2-codex',
+        name: 'GPT-5.2 Codex',
+        match: {
+          equals: 'gpt-5.2-codex',
+        },
+        prices: {},
+      },
+      {
+        id: 'gpt-5.3-codex',
+        name: 'GPT-5.3 Codex',
+        match: {
+          equals: 'gpt-5.3-codex',
+        },
+        prices: {},
+      },
+      {
+        id: 'gpt-5.5-codex',
+        name: 'GPT-5.5 Codex',
+        match: {
+          equals: 'gpt-5.5-codex',
+        },
+        prices: {},
+      },
+    ],
+  },
+  {
     id: 'openrouter',
     name: 'OpenRouter',
     pricing_urls: ['https://openrouter.ai/models'],

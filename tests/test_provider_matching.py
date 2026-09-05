@@ -81,6 +81,16 @@ def test_mistral_model_matching_preserves_native_aliases_without_claiming_qualif
     assert not mistral.model_match.is_match('mistralai/voxtral-small-24b-2507')
 
 
+def test_openai_codex_is_its_own_provider():
+    result = find_provider_by_id(providers, 'openai-codex')
+    assert result is not None
+    assert result.id == 'openai-codex'
+    assert find_provider_by_id(providers, 'openai').id == 'openai'
+    assert (
+        find_provider_by_id(providers, 'openai-banana').id == 'openai'
+    )  # unchanged loose match, documents today's behaviour
+
+
 @pytest.mark.parametrize(
     'provider_ref,provider_id',
     [
