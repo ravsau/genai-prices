@@ -156,6 +156,7 @@ Note: the seeded check only bites after `make build` regenerates the bundled `da
 
 ```
  README.md                             |    1 +
+ REPORT.md                             |  210 ++
  packages/go/internal/data/prices.json |    2 +-
  packages/js/src/data.ts               |  154 ++
  packages/python/genai_prices/data.py  |   99 +
@@ -165,7 +166,7 @@ Note: the seeded check only bites after `make build` regenerates the bundled `da
  tests/dataset/usages.json             | 4028 +++++++++++++++++++++++++++++++--
  tests/test_price_calc.py              |   14 +
  tests/test_provider_matching.py       |   10 +
- 10 files changed, 4178 insertions(+), 245 deletions(-)
+ 11 files changed, 4388 insertions(+), 245 deletions(-)
 ```
 
 ## Things I was unsure about or guessed at (must be confirmed)
