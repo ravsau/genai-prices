@@ -277,12 +277,13 @@ models:
         - equals: mistral-large-latest
         - equals: mistral-large-2407
         - equals: mistral-large-2411
-    prices_checked: 2025-07-04
+    prices_checked: 2026-09-05
     # No context_window: this record also matches the retired mistral-large-2407/2411 aliases
     # (131,072) vs mistral-large-latest's 262,144 — no single value is true for every ref it matches
+    # Mistral Large 3 rate ($0.5/$1.5 per MTok, https://mistral.ai/pricing/api): the retired -2407/-2411 aliases match this record, so they are valued at that rate too.
     prices:
-      input_mtok: 2
-      output_mtok: 6
+      input_mtok: 0.5
+      output_mtok: 1.5
 
   - id: mistral-large-2512
     name: Mistral Large 3 2512
@@ -584,10 +585,11 @@ models:
       equals: mistral-small-latest
     # No context_window: this alias pointed to the 128k mistral-small-2506 before repointing
     # to the 262,144 mistral-small-2603 — no single value is true for every request it matches
-    prices_checked: 2025-07-04
+    prices_checked: 2026-09-05
+    # mistral-small-latest matches Mistral Small 4 on https://mistral.ai/pricing/api ($0.15/$0.6 per MTok).
     prices:
-      input_mtok: 0.1
-      output_mtok: 0.3
+      input_mtok: 0.15
+      output_mtok: 0.6
 
   - id: mistral-tiny
     name: Mistral Tiny

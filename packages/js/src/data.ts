@@ -13620,8 +13620,8 @@ export const data: Provider[] = [
           ],
         },
         prices: {
-          input_mtok: 2,
-          output_mtok: 6,
+          input_mtok: 0.5,
+          output_mtok: 1.5,
         },
       },
       {
@@ -14015,8 +14015,8 @@ export const data: Provider[] = [
           equals: 'mistral-small-latest',
         },
         prices: {
-          input_mtok: 0.1,
-          output_mtok: 0.3,
+          input_mtok: 0.15,
+          output_mtok: 0.6,
         },
       },
       {

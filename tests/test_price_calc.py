@@ -2085,7 +2085,7 @@ EXAMPLES: list[tuple[str, str, Decimal]] = [
     ('google', 'gemini-2.5-pro-preview-03-25', snapshot(Decimal('0.00225'))),
     # ('openrouter', 'meta-llama/llama-3.3-70b-versatile'),
     # ('openrouter', 'meta-llama/llama-4-scout-17b-16e-instruct'),
-    ('mistral', 'mistral-small-latest', snapshot(Decimal('0.00013'))),
+    ('mistral', 'mistral-small-latest', snapshot(Decimal('0.00021'))),
     ('mistral', 'pixtral-12b-latest', snapshot(Decimal('0.000165'))),
     ('openai', 'gpt-3.5-turbo-0125', snapshot(Decimal('0.00065'))),
     ('openai', 'gpt-3.5-turbo-instruct:20230824-v2', snapshot(Decimal('0.0017'))),

@@ -23965,8 +23965,8 @@
           },
           {
             "api_flavor": "default",
-            "input_price": "0.00014",
-            "output_price": "0.000072",
+            "input_price": "0.000035",
+            "output_price": "0.000018",
             "provider_id": "mistral"
           },
           {
@@ -24411,8 +24411,8 @@
           },
           {
             "api_flavor": "default",
-            "input_price": "0.00014",
-            "output_price": "0.000072",
+            "input_price": "0.000035",
+            "output_price": "0.000018",
             "provider_id": "mistral"
           },
           {
@@ -28435,8 +28435,8 @@
           },
           {
             "api_flavor": "default",
-            "input_price": "0.000304",
-            "output_price": "0.000072",
+            "input_price": "0.000076",
+            "output_price": "0.000018",
             "provider_id": "mistral"
           },
           {
@@ -28675,8 +28675,8 @@
           },
           {
             "api_flavor": "default",
-            "input_price": "0.00035",
-            "output_price": "0.000234",
+            "input_price": "0.0000875",
+            "output_price": "0.0000585",
             "provider_id": "mistral"
           },
           {
@@ -29224,8 +29224,8 @@
           },
           {
             "api_flavor": "default",
-            "input_price": "0.000154",
-            "output_price": "0.000072",
+            "input_price": "0.0000385",
+            "output_price": "0.000018",
             "provider_id": "mistral"
           },
           {
@@ -29464,8 +29464,8 @@
           },
           {
             "api_flavor": "default",
-            "input_price": "0.0002",
-            "output_price": "0.000174",
+            "input_price": "0.00005",
+            "output_price": "0.0000435",
             "provider_id": "mistral"
           },
           {
@@ -29733,8 +29733,8 @@
           },
           {
             "api_flavor": "default",
-            "input_price": "0.000172",
-            "output_price": "0.004218",
+            "input_price": "0.000043",
+            "output_price": "0.0010545",
             "provider_id": "mistral"
           },
           {
@@ -32825,8 +32825,8 @@
           },
           {
             "api_flavor": "default",
-            "input_price": "0.00002",
-            "output_price": "0.001344",
+            "input_price": "0.000005",
+            "output_price": "0.000336",
             "provider_id": "mistral"
           },
           {
@@ -109387,8 +109387,8 @@
           },
           {
             "api_flavor": "default",
-            "input_price": "0.000098",
-            "output_price": "0.000414",
+            "input_price": "0.0000245",
+            "output_price": "0.0001035",
             "provider_id": "mistral"
           },
           {
@@ -109629,8 +109629,8 @@
           },
           {
             "api_flavor": "default",
-            "input_price": "0.000008",
-            "output_price": "0.000216",
+            "input_price": "0.000002",
+            "output_price": "0.000054",
             "provider_id": "mistral"
           },
           {
@@ -109871,8 +109871,8 @@
           },
           {
             "api_flavor": "default",
-            "input_price": "0.004594",
-            "output_price": "0.000252",
+            "input_price": "0.0011485",
+            "output_price": "0.000063",
             "provider_id": "mistral"
           },
           {
@@ -110591,8 +110591,8 @@
           },
           {
             "api_flavor": "default",
-            "input_price": "0.000506",
-            "output_price": "0.00003",
+            "input_price": "0.0001265",
+            "output_price": "0.0000075",
             "provider_id": "mistral"
           },
           {
@@ -110849,8 +110849,8 @@
           },
           {
             "api_flavor": "default",
-            "input_price": "0.000536",
-            "output_price": "0.00003",
+            "input_price": "0.000134",
+            "output_price": "0.0000075",
             "provider_id": "mistral"
           },
           {
@@ -142730,8 +142730,8 @@
           },
           {
             "api_flavor": "default",
-            "input_price": "0.0000028",
-            "output_price": "0.0000105",
+            "input_price": "0.0000042",
+            "output_price": "0.000021",
             "provider_id": "mistral"
           },
           {
@@ -146137,8 +146137,8 @@
           },
           {
             "api_flavor": "default",
-            "input_price": "0.0000028",
-            "output_price": "6E-7",
+            "input_price": "0.0000042",
+            "output_price": "0.0000012",
             "provider_id": "mistral"
           },
           {
@@ -147257,8 +147257,8 @@
           },
           {
             "api_flavor": "default",
-            "input_price": "0.0000028",
-            "output_price": "6E-7",
+            "input_price": "0.0000042",
+            "output_price": "0.0000012",
             "provider_id": "mistral"
           },
           {

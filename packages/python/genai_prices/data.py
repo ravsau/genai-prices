@@ -8074,7 +8074,7 @@ providers: list[Provider] = [
                 ),
                 name='Mistral Large',
                 description="This is Mistral AI's flagship model, Mistral Large 2 (version `mistral-large-2407`). It's a proprietary weights-available model and excels at reasoning, code, JSON, chat, and more. Read the launch announcement here.",
-                prices=ModelPrice(input_mtok=Decimal('2'), output_mtok=Decimal('6')),
+                prices=ModelPrice(input_mtok=Decimal('0.5'), output_mtok=Decimal('1.5')),
             ),
             ModelInfo(
                 id='mistral-large-2512',
@@ -8298,7 +8298,7 @@ providers: list[Provider] = [
                 match=ClauseEquals(equals='mistral-small-latest'),
                 name='Mistral Small 3.2',
                 description='SOTA. Multimodal. Multilingual. Apache 2.0.',
-                prices=ModelPrice(input_mtok=Decimal('0.1'), output_mtok=Decimal('0.3')),
+                prices=ModelPrice(input_mtok=Decimal('0.15'), output_mtok=Decimal('0.6')),
             ),
             ModelInfo(
                 id='mistral-tiny',
