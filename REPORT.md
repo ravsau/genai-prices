@@ -131,6 +131,14 @@ To https://github.com/ravsau/genai-prices.git
 branch 'box/663-mistral-prices' set up to track 'origin/box/663-mistral-prices'.
 ```
 
+## Full test suite (post-push)
+
+```
+$ uv run pytest tests -q 2>&1 | tail -3
+1561 passed
+39 xfailed
+```
+
 ## Uncertainties / guesses
 
 - The box had no `uv`, so I installed it via `pip install uv` (sunset: it was the missing prerequisite
