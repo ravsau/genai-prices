@@ -157,3 +157,11 @@ To https://github.com/ravsau/genai-prices.git
  * [new branch]      box/657-direct-provider-discrepancies -> box/657-direct-provider-discrepancies
 branch 'box/657-direct-provider-discrepancies' set up to track 'origin/box/657-direct-provider-discrepancies'.
 ```
+
+## 8. Full suite (`uv run pytest tests -q 2>&1 | tail -3`)
+
+```
+$ uv run pytest tests -q 2>&1 | tail -3
+      1561 passed
+        39 xfailed
+```
